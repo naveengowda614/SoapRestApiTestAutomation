@@ -1,0 +1,41 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dns="http://www.nbnco.com.au/cim/manageServiceQualification/v3" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>testSiteQualification</activityName>
+            <msgName>ManageServiceQualificationtestSiteQualificationRequest</msgName>
+            <businessServiceName>ManageServiceQualification</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${TEST_ACCESSSEEKER}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>6</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <timestamp>2017-02-16T00:18:59Z</timestamp>
+            <businessChannel>Portal</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <businessProcessVersion>V10.0</businessProcessVersion>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageServiceQualificationRequest>
+            <serviceQualificationType>ServiceQualification</serviceQualificationType>
+            <ServiceQualification>
+                <ServiceQualificationComprisedOf>
+                    <ItemInvolvesLocation>
+                        <Place xsi:type="pla:NBNLocation">
+                            <ID>${SITE_QUALIFICATION_LOC_FTTN}</ID>
+                            <!--LOC000101733863-->
+                        </Place>
+                    </ItemInvolvesLocation>
+                    <type>NBNLocationID</type>
+                </ServiceQualificationComprisedOf>
+            </ServiceQualification>
+        </dns:ManageServiceQualificationRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

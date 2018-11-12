@@ -1,0 +1,248 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ase="http://www.nbnco.com.au/cim/common/accessSeeker/v3" xmlns:bin="http://www.nbnco.com.au/cim/common/businessInteraction/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageProductOrder/v3" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:msg="http://www.nbnco.com.au/cim/common/message/v3" xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:prd="http://www.nbnco.com.au/cim/common/product/v3" xmlns:prj="http://www.nbnco.com.au/cim/common/project/v3" xmlns:rbe="http://www.nbnco.com.au/cim/common/rootBusinessEntity/v3" xmlns:res="http://www.nbnco.com.au/cim/common/resource/v3" xmlns:srv="http://www.nbnco.com.au/cim/common/service/v3" xmlns:tme="http://www.nbnco.com.au/cim/common/time/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>createOrder</activityName>
+            <msgName>ManageProductOrdercreateOrderRequest</msgName>
+            <businessServiceName>ManageProductOrder</businessServiceName>
+            <businessServiceVersion>V2.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${TEST_ACCESSSEEKER}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>6</priority>
+            <communicationPattern>SubmitNotification</communicationPattern>
+            <timestamp>2011-06-23T12:00:00Z</timestamp>
+            <businessChannel>Portal</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <businessProcessVersion>V10.0</businessProcessVersion>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageProductOrderRequest>
+            <ProductOrder>
+                <AccessSeekerInteraction>
+                    <ID>123456789101112</ID>
+                    <billingAccountID>BAN000000892801</billingAccountID>
+                </AccessSeekerInteraction>
+                <orderType>Connect</orderType>
+                <ProductOrderComprisedOf>
+                    <action>ADD</action>
+                    <ItemInvolvesLocation>
+                        <Place xsi:type="pla:NBNLocation">
+                            <ID>${ORDER_ACK_FLS_LOCID}</ID>
+                        </Place>
+                    </ItemInvolvesLocation>
+                    <ItemInvolvesAppointment>
+                        <activityNr>APT000111222123</activityNr>
+                    </ItemInvolvesAppointment>
+                    <ItemInvolvesProduct>
+                        <DescribedBy>
+                            <value>Yes</value>
+                            <Characteristic>
+                                <ID>Priority Assist</ID>
+                                <type>NFAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Accelerated</value>
+                            <Characteristic>
+                                <ID>Order SLA</ID>
+                                <type>NHAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Standard</value>
+                            <Characteristic>
+                                <ID>Service Restoration SLA</ID>
+                                <type>NHAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Yes</value>
+                            <Characteristic>
+                                <ID>Battery Backup Service</ID>
+                                <type>NHAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Yes</value>
+                            <Characteristic>
+                                <ID>Informed Consent</ID>
+                                <type>NHAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <SpecifiedBy>
+                            <ID>TPL123456123456</ID>
+                            <version>1.0</version>
+                            <type>Product Specification</type>
+                            <category>Product Specification</category>
+                        </SpecifiedBy>
+                    </ItemInvolvesProduct>
+                    <ReferencesProductOrderItem>
+                        <action>ADD</action>
+                        <ItemInvolvesProduct>
+                            <DescribedBy>
+                                <value>Indoor</value>
+                                <Characteristic>
+                                    <ID>Location</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>Internal</value>
+                                <Characteristic>
+                                    <ID>NTD Type</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <SpecifiedBy>
+                                <ID>NTD</ID>
+                                <version>1.0</version>
+                                <type>Resource Specification</type>
+                                <category>Product Specification</category>
+                            </SpecifiedBy>
+                        </ItemInvolvesProduct>
+                        <ReferencesProductOrderItem>
+                            <action>ADD</action>
+                            <ItemInvolvesProduct>
+                                <DescribedBy>
+                                    <value>UNI-D</value>
+                                    <Characteristic>
+                                        <ID>UNI Type</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <DescribedBy>
+                                    <value>0</value>
+                                    <Characteristic>
+                                        <ID>Port Id</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <DescribedBy>
+                                    <value>Auto Negotiation (10/100/1000Mbps, Half/Full Duplex)</value>
+                                    <Characteristic>
+                                        <ID>Speed and Duplex</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <DescribedBy>
+                                    <value>10/100/1000BASE-T</value>
+                                    <Characteristic>
+                                        <ID>Interface Type</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <DescribedBy>
+                                    <value>UNI-D1</value>
+                                    <Characteristic>
+                                        <ID>UNI Transient Id</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <SpecifiedBy>
+                                    <ID>UNID</ID>
+                                    <version>1.0</version>
+                                    <type>Resource Specification</type>
+                                    <category>Product Specification</category>
+                                </SpecifiedBy>
+                            </ItemInvolvesProduct>
+                        </ReferencesProductOrderItem>
+                    </ReferencesProductOrderItem>
+                    <ReferencesProductOrderItem>
+                        <action>ADD</action>
+                        <ItemInvolvesProduct>
+                            <DescribedBy>
+                                <value>1:1</value>
+                                <Characteristic>
+                                    <ID>AVC Type</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>D12_U1_Mbps_TC4_P</value>
+                                <Characteristic>
+                                    <ID>Bandwidth Profile</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>Active</value>
+                                <Characteristic>
+                                    <ID>Access Loop Identification</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>CVC012345678903</value>
+                                <Characteristic>
+                                    <ID>CVC Id</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>201</value>
+                                <Characteristic>
+                                    <ID>NNI CVLAN Id</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>UNI-D1</value>
+                                <Characteristic>
+                                    <ID>Connected to UNI</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <SpecifiedBy>
+                                <ID>AVCD</ID>
+                                <version>1.0</version>
+                                <type>Service Specification</type>
+                                <category>Product Specification</category>
+                            </SpecifiedBy>
+                        </ItemInvolvesProduct>
+                    </ReferencesProductOrderItem>
+                </ProductOrderComprisedOf>
+                <AccessSeekerContact>
+                    <contactName>John Doe</contactName>
+                    <contactPhone>+61401123456</contactPhone>
+                </AccessSeekerContact>
+                <ContainsLogisticOrder>
+                    <LogisticOrderItem>
+                        <DescribedBy>
+                            <value>True</value>
+                            <Characteristic>
+                                <ID>Authority To Leave</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <deliveryInstructions>Leave with the receptionist</deliveryInstructions>
+                        <DeliveryTo>
+                            <InvolvesContact>
+                                <phoneNumber>0412345678</phoneNumber>
+                                <type>End User</type>
+                                <contactName>John Doe</contactName>
+                                <emailAddress>emailAddress@domain.com.au</emailAddress>
+                            </InvolvesContact>
+                            <InvolvesDeliveryLocation>
+                                <UnstructuredAddress>
+                                    <addressLine1>123 Street Name</addressLine1>
+                                    <addressLine2>addressLine2</addressLine2>
+                                    <addressLine3>addressLine3</addressLine3>
+                                    <localityName>Sydney</localityName>
+                                    <postcode>2000</postcode>
+                                    <stateTerritoryCode>NSW</stateTerritoryCode>
+                                </UnstructuredAddress>
+                            </InvolvesDeliveryLocation>
+                        </DeliveryTo>
+                    </LogisticOrderItem>
+                </ContainsLogisticOrder>
+            </ProductOrder>
+        </dns:ManageProductOrderRequest>
+    </soapenv:Body>
+
+</soapenv:Envelope>

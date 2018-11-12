@@ -1,0 +1,31 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bin="http://www.nbnco.com.au/cim/common/businessInteraction/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageInventory/v3" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:msg="http://www.nbnco.com.au/cim/common/message/v3" xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:prd="http://www.nbnco.com.au/cim/common/product/v3" xmlns:prj="http://www.nbnco.com.au/cim/common/project/v3" xmlns:rbe="http://www.nbnco.com.au/cim/common/rootBusinessEntity/v3" xmlns:res="http://www.nbnco.com.au/cim/common/resource/v3" xmlns:srv="http://www.nbnco.com.au/cim/common/service/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>getProductConfiguration</activityName>
+            <msgName>ManageInventorygetProductConfigurationRequest</msgName>
+            <businessServiceName>ManageInventory</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${getProductConfig_FLS_ASID}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>4</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <timestamp>2011-09-08T12:00:00Z</timestamp>
+            <businessChannel>B2B</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageInventoryRequest>
+            <Product>
+                <ID>${getProductConfig_FLS_PRIID}</ID>
+            </Product>
+        </dns:ManageInventoryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageNPInventory/v4" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>getProductDetails</activityName>
+            <msgName>ManageNPInventorygetProductDetailsRequest</msgName>
+            <businessServiceName>ManageNPInventory</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <replyToURI>http://0.0.0</replyToURI>
+            <accessSeekerID>${PROD_INSTANCE_ACCESSSEEKER_V1}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>4</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <timestamp>2017-02-01T12:00:00Z</timestamp>
+            <businessChannel>B2B</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <businessProcessVersion>V1.0</businessProcessVersion>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageNPInventoryRequest>
+            <Product>
+                <ID>${PROD_INSTANCE_PRI_V1}</ID>
+            </Product>
+        </dns:ManageNPInventoryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

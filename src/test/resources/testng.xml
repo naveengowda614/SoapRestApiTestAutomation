@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestNgMavenExampleSuite" parallel="false">
+	<test name="TestNgMavenTest">
+		<!-- <classes> <class name="com.nbnco.au.TVT.QueryAddress"/> <class name="com.javacodegeeks.testng.maven.TestNgMavenSecondClass"/> 
+			</classes> -->
+		<packages>
+			<package name="com.nbn.au.rest.TVT" />
+			<package name="com.nbnco.au.soap.TVT" />
+		</packages>
+	</test>
+</suite>

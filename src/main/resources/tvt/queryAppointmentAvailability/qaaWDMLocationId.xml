@@ -1,0 +1,63 @@
+<soapenv:Envelope xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageAppointment/v4" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>queryAppointmentAvailability</activityName>
+            <msgName>ManageAppointmentqueryAppointmentAvailabilityRequest</msgName>
+            <businessServiceName>ManageAppointment</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${TEST_ACCESSSEEKER}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>6</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <timestamp>2011-11-06T23:01:29Z</timestamp>
+            <businessChannel>B2B</businessChannel>
+            <businessProcessVersion>V2.0</businessProcessVersion>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageAppointmentRequest>
+            <AppointmentSearch>
+                <BusinessInteractionAppointment>
+                    <DescribedBy>
+                        <value>No</value>
+                        <Characteristic>
+                            <ID>Priority Assist</ID>
+                        </Characteristic>
+                    </DescribedBy>
+                    <DescribedBy>
+                        <value>Standard</value>
+                        <Characteristic>
+                            <ID>AppointmentSLA</ID>
+                        </Characteristic>
+                    </DescribedBy>
+                    <SpecifiedBy>
+                        <name>Standard Install</name>
+                        <type>Demand Type</type>
+                    </SpecifiedBy>
+                    <InvolvesPlace xsi:type="pla:NBNLocation">
+                        <ID>${QAA_WDM_LOCID}</ID>
+                        <DescribedBy>
+                            <value>Standard</value>
+                            <Characteristic>
+                                <ID>AppointmentSLA</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                    </InvolvesPlace>
+                    <InvolvesAppointmentSlot>
+                        <appointmentDate>
+                            <startDateTime>2018-01-01T00:00:00</startDateTime>
+                        </appointmentDate>
+                    </InvolvesAppointmentSlot>
+                </BusinessInteractionAppointment>
+            </AppointmentSearch>
+        </dns:ManageAppointmentRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

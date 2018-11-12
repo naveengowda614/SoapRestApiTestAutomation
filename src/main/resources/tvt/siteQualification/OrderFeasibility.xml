@@ -1,0 +1,293 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dns="http://www.nbnco.com.au/cim/manageServiceQualification/v3" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>performOrderFeasibility</activityName>
+            <msgName>ManageServiceQualificationtestSiteQualificationRequest</msgName>
+            <businessServiceName>ManageServiceQualification</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${ORDER_FEASIBILITY_ACCESSSEEKER}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>6</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <timestamp>2011-06-23T12:00:00Z</timestamp>
+            <businessChannel>Portal</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <businessProcessVersion>V6.0</businessProcessVersion>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageServiceQualificationRequest>
+            <serviceQualificationType xmlns:tme="http://www.nbnco.com.au/cim/common/time/v3" xmlns:pty="http://www.nbnco.com.au/cim/common/party/v3" xmlns:pfm="http://www.nbnco.com.au/cim/common/performance/v3" xmlns:srv="http://www.nbnco.com.au/cim/common/service/v3" xmlns:res="http://www.nbnco.com.au/cim/common/resource/v3" xmlns:rbe="http://www.nbnco.com.au/cim/common/rootBusinessEntity/v3" xmlns:prj="http://www.nbnco.com.au/cim/common/project/v3" xmlns:prd="http://www.nbnco.com.au/cim/common/product/v3" xmlns:msg="http://www.nbnco.com.au/cim/common/message/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageServiceQualification/v4" xmlns:bin="http://www.nbnco.com.au/cim/common/businessInteraction/v3" xmlns:ase="http://www.nbnco.com.au/cim/common/accessSeeker/v3">ProductOrder</serviceQualificationType>
+            <ProductOrder xmlns:tme="http://www.nbnco.com.au/cim/common/time/v3" xmlns:pty="http://www.nbnco.com.au/cim/common/party/v3" xmlns:pfm="http://www.nbnco.com.au/cim/common/performance/v3" xmlns:srv="http://www.nbnco.com.au/cim/common/service/v3" xmlns:res="http://www.nbnco.com.au/cim/common/resource/v3" xmlns:rbe="http://www.nbnco.com.au/cim/common/rootBusinessEntity/v3" xmlns:prj="http://www.nbnco.com.au/cim/common/project/v3" xmlns:prd="http://www.nbnco.com.au/cim/common/product/v3" xmlns:msg="http://www.nbnco.com.au/cim/common/message/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageServiceQualification/v4" xmlns:bin="http://www.nbnco.com.au/cim/common/businessInteraction/v3" xmlns:ase="http://www.nbnco.com.au/cim/common/accessSeeker/v3">
+                <AccessSeekerInteraction>
+                    <!--Contains the Access Seeker Order Correlation ID. This is a unique id which can be provided by the Access Seeker to correlate this Product Order with its associated notify responses.-->
+                    <ID>ASI000000000057</ID>
+                    <!--Access Seeker Billing Account ID. Charges will be billed to this account.-->
+                    <billingAccountID>${ORDER_FEASIBILITY_BILLACCNT}</billingAccountID>
+                </AccessSeekerInteraction>
+                <!--Specifies the type of Product Order Request. Valid values are: Connect, Disconnect and Modify-->
+                <orderType>Connect</orderType>
+                <!--*******************************************************************-->
+                <!--Main Order Line Item (MOLI)-->
+                <!--*******************************************************************-->
+                <!--Access Seeker populates the Product Order Line items with details of Appointment and Product, Service and Resource to be used as part of the Order-->
+                <ProductOrderComprisedOf>
+                    <!--Valid Values are: ADD, NO CHANGE, MODIFY, DELETE-->
+                    <action>ADD</action>
+                    <ItemInvolvesLocation>
+                        <Place xsi:type="pla:NBNLocation">
+                            <!--Unique NBN Location ID. Create Order Request only requires the NBN Location ID and not the complete location. Modify Order cannot be used to update the Location.-->
+                            <ID>${ORDER_FEASIBILITY_LOCID}</ID>
+                        </Place>
+                    </ItemInvolvesLocation>
+                    <!--==================================================-->
+                    <!--Appointment Details-->
+                    <!--==================================================-->
+                    <!--Appointment information for physical installation-->
+                    <ItemInvolvesProduct>
+                        <DescribedBy>
+                            <value>Standard</value>
+                            <Characteristic>
+                                <ID>Service Restoration SLA</ID>
+                                <type>NSAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Enabled</value>
+                            <Characteristic>
+                                <ID>Encryption</ID>
+                                <type>NSAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Standard</value>
+                            <Characteristic>
+                                <ID>Order SLA</ID>
+                                <type>NSAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>No</value>
+                            <Characteristic>
+                                <ID>NSS or ABG Deinstall</ID>
+                                <type>NSAS</type>
+                            </Characteristic>
+                        </DescribedBy>
+                        <SpecifiedBy>
+                            <!--DefaultMappedNSASv1.0-->
+                            <ID>${OFTEMP1}</ID>
+                            <!--The version of the product specification-->
+                            <version>${OFTEMPVER1}</version>
+                            <type>Product Specification</type>
+                            <category>Product Specification</category>
+                        </SpecifiedBy>
+                    </ItemInvolvesProduct>
+                    <!--NTD item-->
+                    <ReferencesProductOrderItem>
+                        <action>ADD</action>
+                        <ItemInvolvesProduct>
+                            <DescribedBy>
+                                <value>Indoor</value>
+                                <Characteristic>
+                                    <ID>Location</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>Internal</value>
+                                <Characteristic>
+                                    <ID>NTDType</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--i_ntd_location-->
+                            <DescribedBy>
+                                <value>AC</value>
+                                <Characteristic>
+                                    <ID>Power Source</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>Other</value>
+                                <Characteristic>
+                                    <ID>Roof Type</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>Double Brick</value>
+                                <Characteristic>
+                                    <ID>Wall Material</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <DescribedBy>
+                                <value>Single Storey</value>
+                                <Characteristic>
+                                    <ID>Building Height</ID>
+                                    <type>NTD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <SpecifiedBy>
+                                <ID>NTD</ID>
+                                <version>1.0</version>
+                                <type>Resource Specification</type>
+                                <category>Product Specification</category>
+                            </SpecifiedBy>
+                        </ItemInvolvesProduct>
+                        <ReferencesProductOrderItem>
+                            <action>ADD</action>
+                            <ItemInvolvesProduct>
+                                <!--i_unid_type-->
+                                <DescribedBy>
+                                    <value>UNI-D</value>
+                                    <Characteristic>
+                                        <ID>UNI Type</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <!--VLAN Mode-->
+                                <DescribedBy>
+                                    <value>Default-Mapped</value>
+                                    <Characteristic>
+                                        <ID>VLAN Mode</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <!--Port Id-->
+                                <DescribedBy>
+                                    <value>0</value>
+                                    <Characteristic>
+                                        <ID>Port Id</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <!--i_unid_speed_and_duplex-->
+                                <DescribedBy>
+                                    <value>Auto Negotiation (10/100/1000Mbps, Half/Full Duplex)</value>
+                                    <Characteristic>
+                                        <ID>Speed and Duplex</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <!--i_unid_interface_type-->
+                                <DescribedBy>
+                                    <value>10/100/1000BASE-T</value>
+                                    <Characteristic>
+                                        <ID>Interface Type</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <!--uni_transient_id-->
+                                <DescribedBy>
+                                    <value>UNI-D1</value>
+                                    <Characteristic>
+                                        <ID>UNI Transient Id</ID>
+                                        <type>UNID</type>
+                                    </Characteristic>
+                                </DescribedBy>
+                                <SpecifiedBy>
+                                    <ID>UNID</ID>
+                                    <version>1.0</version>
+                                    <type>Resource Specification</type>
+                                    <category>Product Specification</category>
+                                </SpecifiedBy>
+                            </ItemInvolvesProduct>
+                        </ReferencesProductOrderItem>
+                    </ReferencesProductOrderItem>
+                    <ReferencesProductOrderItem>
+                        <action>ADD</action>
+                        <ItemInvolvesProduct>
+                            <!--i_avc_type-->
+                            <DescribedBy>
+                                <value>1:1</value>
+                                <Characteristic>
+                                    <ID>AVC Type</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--BW Profile-->
+                            <DescribedBy>
+                                <value>D12_U1_Mbps_TC4_P</value>
+                                <Characteristic>
+                                    <ID>Bandwidth Profile</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--IGMP Version-->
+                            <DescribedBy>
+                                <value>MLD_V2</value>
+                                <Characteristic>
+                                    <ID>IGMP Version</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--i_access_loop_identification_active-->
+                            <DescribedBy>
+                                <value>Active</value>
+                                <Characteristic>
+                                    <ID>Access Loop Identification</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--i_cvc_id-->
+                            <DescribedBy>
+                                <value>${ORDER_FEASIBILITY_CVC}</value>
+                                <Characteristic>
+                                    <ID>CVC Id</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--i_c_tag_uni-->
+                            <DescribedBy>
+                                <value>0</value>
+                                <Characteristic>
+                                    <ID>NNI CVLAN Id</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--uni_transient_id-->
+                            <DescribedBy>
+                                <value>UNI-D1</value>
+                                <Characteristic>
+                                    <ID>Connected to UNI</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <!--TPEP-->
+                            <DescribedBy>
+                                <value>Transport Protocol and Web Page Optimisation ON</value>
+                                <Characteristic>
+                                    <ID>TPEP</ID>
+                                    <type>AVCD</type>
+                                </Characteristic>
+                            </DescribedBy>
+                            <SpecifiedBy>
+                                <ID>AVCD</ID>
+                                <version>1.0</version>
+                                <type>Service Specification</type>
+                                <category>Product Specification</category>
+                            </SpecifiedBy>
+                        </ItemInvolvesProduct>
+                    </ReferencesProductOrderItem>
+                </ProductOrderComprisedOf>
+                <!--==================================================-->
+                <!--Access Seeker Contact Details-->
+                <!--==================================================-->
+                <AccessSeekerContact>
+                    <contactName>John Doe</contactName>
+                    <contactPhone>+61401123456</contactPhone>
+                </AccessSeekerContact>
+                <!--Close the main order line item (MOLI).-->
+            </ProductOrder>
+        </dns:ManageServiceQualificationRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

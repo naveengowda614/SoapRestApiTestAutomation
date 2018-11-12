@@ -1,0 +1,40 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ase="http://www.nbnco.com.au/cim/common/accessSeeker/v3" xmlns:bin="http://www.nbnco.com.au/cim/common/businessInteraction/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageProductOrder/v3" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:msg="http://www.nbnco.com.au/cim/common/message/v3" xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:prd="http://www.nbnco.com.au/cim/common/product/v3" xmlns:prj="http://www.nbnco.com.au/cim/common/project/v3" xmlns:rbe="http://www.nbnco.com.au/cim/common/rootBusinessEntity/v3" xmlns:res="http://www.nbnco.com.au/cim/common/resource/v3" xmlns:srv="http://www.nbnco.com.au/cim/common/service/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>createOrderComment</activityName>
+            <msgName>ManageProductOrdercreateOrderCommentRequest</msgName>
+            <businessServiceName>ManageProductOrder</businessServiceName>
+            <businessServiceVersion>V2.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${CREATE_ORDER_COMMENT_ACCESSSEEKER_FLS}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>6</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <timestamp>2011-06-23T12:00:00Z</timestamp>
+            <businessChannel>Portal</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <businessProcessVersion>V16.0</businessProcessVersion>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageProductOrderRequest>
+            <ProductOrder>
+                <ID>${CREATE_ORDER_COMMENT_FLS}</ID>
+                <Comment>
+                    <description>hello world</description>
+                    <timestamp>2011-06-23T12:00:00Z</timestamp>
+                    <Author>
+                        <name>TEST_USER</name>
+                        <role>NBN Activations User</role>
+                    </Author>
+                </Comment>
+            </ProductOrder>
+        </dns:ManageProductOrderRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

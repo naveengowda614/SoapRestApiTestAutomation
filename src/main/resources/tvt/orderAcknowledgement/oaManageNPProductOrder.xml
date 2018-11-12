@@ -1,0 +1,133 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dns="http://www.nbnco.com.au/cim/manageNPProductOrder/v4" xmlns:bin="http://www.nbnco.com.au/cim/common/businessInteraction/v4" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:qte="http://www.nbnco.com.au/cim/common/quote/v4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>createOrder</activityName>
+            <msgName>ManageNPProductOrdercreateOrderRequest</msgName>
+            <businessServiceName>ManageNPProductOrder</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${TEST_ACCESSSEEKER}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>6</priority>
+            <communicationPattern>SubmitNotification</communicationPattern>
+            <timestamp>2011-06-23T12:00:00Z</timestamp>
+            <businessChannel>Portal</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <businessProcessVersion>V1.0</businessProcessVersion>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageNPProductOrderRequest>
+            <ProductOrder>
+                <AccessSeekerInteraction>
+                    <ID>123456789101112</ID>
+                    <billingAccountID>BAN000000892801</billingAccountID>
+                </AccessSeekerInteraction>
+                <DescribedBy>
+                    <value>Free Text</value>
+                    <Characteristic>
+                        <ID>Additional Information</ID>
+                    </Characteristic>
+                </DescribedBy>
+                <orderType>Connect</orderType>
+                <orderSubType>Records Only</orderSubType>
+                <ProductOrderComprisedOf>
+                    <action>ADD</action>
+                    <ItemInvolvesLocation>
+                        <Place xsi:type="pla:NBNLocation">
+                            <ID>LOC007033782117</ID>
+                        </Place>
+                    </ItemInvolvesLocation>
+                    <ItemInvolvesProduct>
+                        <DescribedBy>
+                            <value>Excepted</value>
+                            <Characteristic>
+                                <ID>Licence Classification</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Compatible Service</value>
+                            <Characteristic>
+                                <ID>Service Type</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Yes</value>
+                            <Characteristic>
+                                <ID>Supports Special Service</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Yes</value>
+                            <Characteristic>
+                                <ID>Supplies Other Location</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Yes</value>
+                            <Characteristic>
+                                <ID>Supports Long Copper Tail</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>Yes</value>
+                            <Characteristic>
+                                <ID>Supplies MDU Common Area</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <DescribedBy>
+                            <value>D-TRGL-P21-O-136</value>
+                            <Characteristic>
+                                <ID>Third Party Reference Id</ID>
+                            </Characteristic>
+                        </DescribedBy>
+                        <SpecifiedBy>
+                            <ID>Copper Sub Loop Licence</ID>
+                            <version>1.0</version>
+                            <type>Licence Specification</type>
+                            <category>Product</category>
+                        </SpecifiedBy>
+                        <type>USL</type>
+                        <productStatus>Preliminary</productStatus>
+                    </ItemInvolvesProduct>
+                    <ReferencesProductOrderItem>
+                        <action>MODIFY</action>
+                        <ItemInvolvesProduct>
+                            <ID>CPI000000000000</ID>
+                            <SpecifiedBy>
+                                <ID>UNI-DSL</ID>
+                                <version>1.0</version>
+                                <type>Resource Specification</type>
+                                <category>Product Specification</category>
+                            </SpecifiedBy>
+                        </ItemInvolvesProduct>
+                        <ItemInvolvesResource>
+                            <ID>EXCH01 M2:1250</ID>
+                            <SpecifiedBy>
+                                <ID>M Pair</ID>
+                                <version>1.0.0</version>
+                                <type>Network Resource Specification</type>
+                                <category>Twisted Pair</category>
+                            </SpecifiedBy>
+                        </ItemInvolvesResource>
+                        <ItemInvolvesResource>
+                            <ID>P17:194</ID>
+                            <SpecifiedBy>
+                                <ID>O Pair</ID>
+                                <version>1.0.0</version>
+                                <type>Network Resource Specification</type>
+                                <category>Twisted Pair</category>
+                            </SpecifiedBy>
+                        </ItemInvolvesResource>
+                    </ReferencesProductOrderItem>
+                </ProductOrderComprisedOf>
+            </ProductOrder>
+        </dns:ManageNPProductOrderRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

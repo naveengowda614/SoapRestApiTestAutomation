@@ -1,0 +1,31 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dns="http://www.nbnco.com.au/cim/manageWorkOrder/v5" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>getWorkOrder</activityName>
+            <msgName>ManageWorkOrdergetWorkOrderRequest</msgName>
+            <businessServiceName>ManageWorkOrder</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${GET_WORK_ORDER_HWM_ACCESSSEEKER}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>4</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <timestamp>2012-08-23T12:00:00Z</timestamp>
+            <businessChannel>B2B</businessChannel>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageWorkOrderRequest>
+            <FieldWork>
+                <ID>${GET_WORK_ORDER_HWM}</ID>
+                <FieldWorkSpecifiedBy>
+                    <ID>x</ID>
+                    <version>x</version>
+                    <type>x</type>
+                    <category>x</category>
+                </FieldWorkSpecifiedBy>
+            </FieldWork>
+        </dns:ManageWorkOrderRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

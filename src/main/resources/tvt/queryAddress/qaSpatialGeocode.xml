@@ -1,0 +1,46 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pla="http://www.nbnco.com.au/cim/common/place/v3" xmlns:dns="http://www.nbnco.com.au/cim/manageAddress/v3" xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <mhe:MessageHeader>
+            <activityName>queryAddress</activityName>
+            <msgName>ManageAddressqueryAddressRequest</msgName>
+            <businessServiceName>ManageAddress</businessServiceName>
+            <businessServiceVersion>V1.0</businessServiceVersion>
+            <msgType>Request</msgType>
+            <accessSeekerID>${TEST_ACCESSSEEKER}</accessSeekerID>
+            <correlationId>CorrelationID-UUID</correlationId>
+            <security>Placeholder Security</security>
+            <priority>4</priority>
+            <communicationPattern>RequestReply</communicationPattern>
+            <timestamp>2011-06-23T12:00:00Z</timestamp>
+            <businessChannel>Portal</businessChannel>
+            <HeaderCharacteristicValue>
+                <value>TRUE</value>
+                <Characteristic>
+                    <name>Mocked</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+            <HeaderCharacteristicValue>
+                <value>50</value>
+                <Characteristic>
+                    <name>QueryLimit</name>
+                </Characteristic>
+            </HeaderCharacteristicValue>
+        </mhe:MessageHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <dns:ManageAddressRequest>
+            <AddressSearch>
+                <type>SpatialGeocode</type>
+                <BusinessInteractionLocation>
+                    <Place xsi:type="pla:NBNLocation">
+                        <Geocode>
+                            <geographicDatum>GDA94</geographicDatum>
+                            <latitude>${QUERY_ADDRESS_LATITUDE}</latitude>
+                            <longitude>${QUERY_ADDRESS_LONGITUDE}</longitude>
+                        </Geocode>
+                    </Place>
+                </BusinessInteractionLocation>
+            </AddressSearch>
+        </dns:ManageAddressRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
